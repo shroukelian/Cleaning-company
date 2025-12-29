@@ -855,7 +855,9 @@ footer {
         border-radius: 12px;
         padding: 10px 15px;
     }
-
+.contact-button .btn-primary1{
+    display: none;
+}
     .hero-buttons {
     display: flex;
     flex-direction: column; /* ترتيب رأسي */
@@ -869,8 +871,8 @@ footer {
     text-align: center;
     padding: 15px !important; /* تكبير حجم الزرار لسهولة الضغط */
 }
-    .logo-img { height: 35px; }
-    .company-brand-name { font-size: 1.1rem; }
+    .logo-img { height: 50px; }
+    .company-brand-name { font-size:x-large; }
 
     .menu-toggle { display: block; z-index: 6001; }
 
@@ -926,5 +928,5 @@ footer {
 @media (max-width: 576px) {
     .section-title { font-size: 2rem; }
     .hero-content h1 { font-size: 1.8rem; }
-    .company-brand-name { font-size: 1rem; }
+    /* .company-brand-name { font-size: 1rem; } */
 }
