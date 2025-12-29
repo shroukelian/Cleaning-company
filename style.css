@@ -189,21 +189,21 @@ section { padding: 80px 0; }
 /* About Us Section */
 .about-section {
     padding: 80px 0;
-    background-color: var(--light-text); /* خلفية بيضاء واضحة */
+    background-color: var(--light-text);
 }
 
 .about-content {
     display: flex;
     flex-wrap: wrap;
-    align-items: center; /* لمحاذاة العناصر عمودياً في المنتصف */
-    justify-content: space-between; /* لتوزيع العناصر مع مسافة بينها */
-    gap: 40px; /* المسافة بين النص والصورة */
+    align-items: center; 
+    justify-content: space-between;
+    gap: 40px; 
 }
 
 .about-text {
-    flex: 2; /* النص يأخذ ضعف مساحة الصورة تقريباً */
-    min-width: 350px; /* لضمان ألا يصبح النص ضيقًا جداً */
-    padding: 20px; /* إضافة padding حول النص لتحسين مظهره */
+    flex: 2; 
+    min-width: 350px;
+    padding: 20px;
 }
 
 .about-text p {
@@ -219,21 +219,21 @@ section { padding: 80px 0; }
 }
 
 .about-text .btn-primary {
-    margin-top: 20px; /* مسافة أعلى الزر */
-    background-color: var(--primary-blue); /* جعل زر التواصل أزرق */
+    margin-top: 20px; 
+    background-color: var(--primary-blue);
     color: var(--light-text);
     
 }
 .about-text .btn-primary:hover {
-    background-color: #1976d2; /* لون أزرق أغمق عند التحويم */
+    background-color: #1976d2;
 }
 
 .about-image {
-    flex: 1; /* الصورة تأخذ مساحة واحدة */
-    min-width: 300px; /* لضمان ألا تصبح الصورة صغيرة جداً */
+    flex: 1; 
+    min-width: 300px; 
     text-align: center;
-    position: relative; /* لتمكين الظل والتأثيرات */
-    padding: 20px; /* padding لترك مساحة للظل */
+    position: relative;
+    padding: 20px; 
 }
 
 .about-image img {
@@ -270,13 +270,10 @@ section { padding: 80px 0; }
     }
 }
 
-/* ------------------------------------- */
 /* Animation Styles - Animate.css integration */
-/* ------------------------------------- */
-/* تأكد أن هذه الكلاسات موجودة وفعالة */
 .animate-on-scroll {
     opacity: 0;
-    transform: translateY(30px); /* بدء من الأسفل قليلاً */
+    transform: translateY(30px); 
 }
 .animate-on-scroll.is-visible {
     animation: fadeInUp 0.8s ease-out forwards;
@@ -322,16 +319,13 @@ section { padding: 80px 0; }
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     text-align: center;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    /* زيادة مدة الانتقال */
     cursor: pointer;
     opacity: 0;
-    /* إخفاء البطاقات مبدئياً */
     transform: translateY(30px);
 }
 
 .service-item.is-visible {
     animation: fadeInUp 0.8s ease-out forwards;
-    /* تطبيق أنيميشن الظهور */
 }
 
 
@@ -396,7 +390,6 @@ section { padding: 80px 0; }
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     opacity: 0;
-    /* إخفاء العناصر مبدئياً */
     transform: translateY(20px);
 }
 
@@ -423,15 +416,13 @@ section { padding: 80px 0; }
 /* Testimonials Section */
 .testimonials-section {
     padding: 80px 0;
-    /* BACKGROUND_IMAGE_FIXED: إضافة صورة خلفية ثابتة */
     background: url('images/عنا.jpg') no-repeat center center fixed; /* استبدل بالصورة الخاصة بك */
     background-size: cover;
     color: var(--light-text);
-    position: relative; /* لتحديد موضع الـ overlay */
-    z-index: 1; /* لجعل الـ overlay يظهر فوق الصورة */
+    position: relative;
+    z-index: 1; 
 }
 
-/* طبقة تراكب (Overlay) لجعل النص مقروءاً فوق الصورة */
 .testimonials-section::before {
     content: '';
     position: absolute;
@@ -439,8 +430,8 @@ section { padding: 80px 0; }
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* طبقة سوداء شفافة بنسبة 60% */
-    z-index: -1; /* لجعل الـ overlay يقع تحت محتوى القسم (النصوص والبطاقات) */
+    background-color: rgba(0, 0, 0, 0.6); 
+    z-index: -1;
 }
 
 .testimonials-section .section-title {
@@ -455,12 +446,12 @@ section { padding: 80px 0; }
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    position: relative; /* لجعل grid يظهر فوق الـ overlay */
+    position: relative; 
     z-index: 1;
 }
 
 .testimonial-item {
-    background-color: var(--light-text); /* حافظ على خلفية بيضاء لبطاقات الشهادات */
+    background-color: var(--light-text);
     color: var(--dark-text);
     padding: 30px;
     border-radius: 15px;
@@ -495,7 +486,7 @@ section { padding: 80px 0; }
     font-size: 1.1rem;
     line-height: 1.7;
     margin-bottom: 25px;
-    min-height: 120px; /* لتوحيد ارتفاع النصوص تقريباً */
+    min-height: 120px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -524,13 +515,13 @@ section { padding: 80px 0; }
 /* Responsive Design for Testimonials Section */
 @media (max-width: 768px) {
     .testimonials-grid {
-        grid-template-columns: 1fr; /* عمود واحد في الشاشات الصغيرة */
+        grid-template-columns: 1fr; 
     }
     .testimonial-item .testimonial-text {
-        min-height: unset; /* إزالة الارتفاع الثابت في الجوال */
+        min-height: unset; 
     }
         .testimonials-section {
-        background-attachment: scroll; /* أو يمكنك تركه fixed إذا كان الأداء جيداً */
+        background-attachment: scroll; 
     }
 }
 /* Contact Us Section */
@@ -562,8 +553,8 @@ section { padding: 80px 0; }
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     flex: 1;
-    min-width: 300px; /* لضمان عرض مناسب */
-    max-width: 550px; /* لضبط العرض الأقصى لكل عمود */
+    min-width: 300px; 
+    max-width: 550px; 
 }
 
 .contact-form-container h3,
@@ -622,7 +613,7 @@ section { padding: 80px 0; }
 }
 
 .contact-form textarea {
-    resize: vertical; /* للسماح بتغيير حجم مربع النص عمودياً فقط */
+    resize: vertical; 
 }
 
 .contact-form .btn-primary {
@@ -631,12 +622,12 @@ section { padding: 80px 0; }
     font-size: 1.1rem;
     display: flex;
     align-items: center;
-    gap: 10px; /* مسافة بين النص والأيقونة */
-    justify-content: center; /* توسيط الزر داخل الحاوية */
+    gap: 10px; 
+    justify-content: center; 
     margin-top: 20px;
-    margin-right: auto; /* لتوسيط الزر في الاتجاه الأفقي */
-    margin-left: auto; /* لتوسيط الزر في الاتجاه الأفقي */
-    background-color: var(--secondary-green); /* لون أخضر لزر الإرسال */
+    margin-right: auto; 
+    margin-left: auto; 
+    background-color: var(--secondary-green);
     color: var(--light-text);
 }
 .contact-form .btn-primary:hover {
@@ -653,13 +644,13 @@ section { padding: 80px 0; }
     margin-bottom: 15px;
     display: flex;
     align-items: center;
-    gap: 10px; /* مسافة بين الأيقونة والنص */
+    gap: 10px; 
 }
 
 .contact-info p i {
     color: var(--primary-blue);
     font-size: 1.3rem;
-    width: 25px; /* لتوحيد عرض الأيقونات */
+    width: 25px;
     text-align: center;
 }
 
@@ -673,23 +664,23 @@ section { padding: 80px 0; }
 
 .map-container {
     border-radius: 10px;
-    overflow: hidden; /* لضمان أن الخريطة تأخذ الـ border-radius */
+    overflow: hidden; 
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
 .map-container iframe {
-    border-radius: 10px; /* لضمان أن الـ iframe نفسه له border-radius */
+    border-radius: 10px;
 }
 
 /* Responsive Design for Contact Section */
 @media (max-width: 992px) {
     .contact-grid {
-        flex-direction: column; /* جعل الأقسام فوق بعض في الشاشات الصغيرة */
+        flex-direction: column; 
         align-items: center;
     }
     .contact-form-container,
     .contact-details-container {
-        max-width: 100%; /* تأخذ العرض الكامل */
+        max-width: 100%;
         width: 100%;
     }
     .contact-intro {
@@ -764,10 +755,7 @@ footer {
     transform: scale(1.1) rotate(5deg);
 }
 
-/* ------------------------------------- */
 /* Animation Styles - Animate.css integration */
-/* ------------------------------------- */
-/* Override Animate.css for initial hidden state for animate-on-scroll */
 .animate-on-scroll {
     opacity: 0;
 }
@@ -779,7 +767,6 @@ footer {
 }
 
 
-/* --- أنيميشن النبض المخصص للسلوجان --- */
 @keyframes pulse-soft {
     0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4); }
     70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); }
@@ -801,12 +788,10 @@ footer {
     font-size: 1.1rem;
     border: 1px solid rgba(76, 175, 80, 0.5);
     display: inline-block;
-    /* تشغيل أنيميشن النبض باستمرار */
     animation: pulse-soft 2s infinite ease-in-out;
     backdrop-filter: blur(5px);
 }
 
-/* تحسين شكل النصوص في الهيرو */
 .hero-content h1 {
     line-height: 1.4;
     text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
@@ -821,7 +806,6 @@ footer {
     color: #eee;
 }
 
-/* أنيميشن خفيف للخلفية (إختياري لجعلها حية) */
 @keyframes backgroundMove {
     0% { background-position: center; }
     50% { background-position: 52% 52%; }
@@ -832,7 +816,6 @@ footer {
     animation: backgroundMove 10s infinite alternate ease-in-out;
 }
 
-/* جعل الأزرار تتحرك عند الوقوف عليها بشكل أجمل */
 .hero-buttons .btn-primary, .hero-buttons .btn-secondary {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -843,15 +826,12 @@ footer {
 .hero-buttons .btn-secondary:hover {
     background-color: var(--secondary-green);
 }
-/* ------------------------------------------------------------------ */
-/* 7. MOBILE RESPONSIVE (هنا حل مشكلة تداخل العناصر والشاشة البيضاء) */
-/* ------------------------------------------------------------------ */
 @media (max-width: 992px) {
     header {
         top: 10px;
         width: 95%;
         margin: 0 auto;
-        left: 2.5%; /* لتوسيط الهيدر تماماً */
+        left: 2.5%; 
         border-radius: 12px;
         padding: 10px 15px;
     }
@@ -860,16 +840,16 @@ footer {
 }
     .hero-buttons {
     display: flex;
-    flex-direction: column; /* ترتيب رأسي */
-    gap: 20px !important;    /* زيادة المسافة بين الزرين (تقدر تخليها 25 لو عايز مسافة أكبر) */
+    flex-direction: column; 
+    gap: 20px !important;    
     align-items: center;
-    margin-top: 30px;        /* مسافة بين الكلام والأزرار */
+    margin-top: 30px;       
 }
 
 .hero-buttons a {
-    width: 90% !important;   /* عرض الأزرار على الموبايل */
+    width: 90% !important;  
     text-align: center;
-    padding: 15px !important; /* تكبير حجم الزرار لسهولة الضغط */
+    padding: 15px !important; 
 }
     .logo-img { height: 50px; }
     .company-brand-name { font-size:x-large; }
@@ -881,11 +861,10 @@ footer {
         font-size: 0.85rem;
     }
 
-    /* القائمة الجانبية: تم إصلاحها لتكون خارج تدفق الهيدر تماماً */
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%; /* مخفية تماماً خارج الشاشة */
+        right: -100%; 
         width: 100%;
         height: 100vh;
         background: white;
@@ -894,11 +873,10 @@ footer {
         align-items: center;
         gap: 30px;
         transition: 0.4s ease-in-out;
-        z-index: 5500; /* تحت زر المنيو وفوق المحتوى */
+        z-index: 5500; 
         padding: 20px;
     }
 
-    /* الحالة النشطة */
     .nav-links.active {
         right: 0;
     }
@@ -915,7 +893,6 @@ footer {
         border-bottom: 1px solid #f0f0f0;
     }
 
-    /* تعديل الهيرو سكشن للموبايل */
     .hero-section {
         padding-top: 100px;
         height: auto;
@@ -930,3 +907,41 @@ footer {
     .hero-content h1 { font-size: 1.8rem; }
     /* .company-brand-name { font-size: 1rem; } */
 }
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 250px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(33, 150, 243, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s;
+    font-weight: bold;
+}
+
+.gallery-item:hover img { transform: scale(1.1); }
+.gallery-item:hover .image-overlay { bottom: 0; }

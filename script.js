@@ -8,14 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             navLinks.classList.toggle('active');
             
-            // تبديل الأيقونة
             if (icon) {
                 icon.classList.toggle('fa-bars');
                 icon.classList.toggle('fa-times');
             }
         });
 
-        // إغلاق القائمة عند الضغط على أي رابط
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -27,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // تأثير الهيدر عند السكرول
     const header = document.querySelector('header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
