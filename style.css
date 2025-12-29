@@ -1,54 +1,54 @@
-/* تضمين مكتبة Animate.css للأنيميشن الجاهزة */
+/* 1. Imports & Global Styles */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
 
-/* تنسيقات عامة وإعادة تعيين */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Cairo', sans-serif;
-    line-height: 1.6;
-    /* BACKGROUND_COLOR_CHANGE: تم تغيير لون الخلفية ليتناسب مع الهيرو سكشن أو يكون شفافًا */
-    /* يمكنك اختيار إما خلفية شفافة أو لون مقارب لخلفية الهيرو سكشن */
-    /* background-color: transparent; */
-    /* ليكون شفافًا تمامًا */
-    background-color: transparent;
-    /* لون داكن جداً يختلط مع ألوان الهيرو سكشن */
-    color: #333;
-    direction: rtl;
-    text-align: right;
-    overflow-x: hidden;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    list-style: none;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* لوحة الألوان المستوحاة من الشعار */
 :root {
     --primary-blue: #2196f3;
     --secondary-green: #4caf50;
     --accent-yellow: #ffc107;
     --dark-text: #2c3e50;
     --light-text: #ffffff;
-    --grey-bg: #ecf0f1;
+    --grey-bg: #f4f7f6;
 }
 
-/* الأزرار الأساسية */
+body {
+    font-family: 'Cairo', sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+    color: #333;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.btn-primary1{
+    display: inline-block;
+    background: var(--accent-yellow);
+    color: var(--dark-text);
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    animation: pulse-soft 2s infinite ease-in-out;
+    backdrop-filter: blur(5px);
+}
+/* 2. Buttons */
 .btn-primary {
     display: inline-block;
     background: var(--accent-yellow);
@@ -57,16 +57,15 @@ ul {
     border-radius: 25px;
     font-size: 1.1rem;
     font-weight: 700;
-    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* أضف box-shadow للتحولات */
+    transition: 0.3s;
     border: none;
     cursor: pointer;
+
 }
 
 .btn-primary:hover {
-    background: #e6b000;
-    color: var(--light-text);
     transform: translateY(-3px);
-    /* تأثير رفع عند التحويم */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .btn-secondary {
@@ -77,49 +76,32 @@ ul {
     border-radius: 25px;
     font-size: 1.1rem;
     font-weight: 700;
-    transition: all 0.3s ease, transform 0.2s ease;
+    transition: 0.3s;
     border: 2px solid var(--light-text);
-    cursor: pointer;
 }
 
-.btn-secondary:hover {
-    background: var(--light-text);
-    color: var(--primary-blue);
-    transform: translateY(-3px);
-    /* تأثير رفع عند التحويم */
-}
-
-/* Header & Navbar - التعديلات هنا */
+/* 3. Header & Navigation (Desktop) */
 header {
-    background: var(--grey-bg);
-    padding: 0.8rem 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 20px;
-    /* تم التعديل: زيادة المسافة من الأعلى للهيدر */
-    z-index: 1000;
-    max-width: 95%;
-    margin: 0 auto;
-    border-radius: 15px;
-    /* تم التعديل: إعادة الـ border-radius لكل الزوايا */
-    overflow: hidden;
-    transition: all 0.3s ease;
-
+    background: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5000;
+    transition: 0.3s;
 }
 
-/* header.scrolled {
-    border-radius: 0;
-    max-width: 100%;
-} */
+header.scrolled {
+    padding: 10px 0;
+    background: rgba(255, 255, 255, 0.98);
+}
 
-nav {
+nav.container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-    /* الحفاظ على الـ padding الداخلي */
 }
 
 .logo a {
@@ -129,185 +111,79 @@ nav {
 
 .logo-img {
     height: 50px;
-    /* تصغير حجم الشعار قليلاً ليتناسب مع الهيدر الأصغر */
-    width: auto;
     margin-left: 10px;
 }
 
 .company-brand-name {
-    color: var(--accent-yellow);
-    font-size: 1.8rem;
-    /* تصغير حجم خط اسم الشركة */
-    font-weight: 800;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    transition: color 0.3s ease;
-}
-
-.logo a:hover .company-brand-name {
-    color: var(--accent-yellow);
-}
-
-nav .nav-links {
-    display: flex;
-}
-
-nav .nav-links li {
-    margin-left: 20px;
-    /* تقليل المسافة بين الروابط قليلاً */
-}
-
-nav .nav-links li a {
     color: var(--primary-blue);
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: var(--dark-text);
     font-weight: 600;
-    padding: 8px 0;
-    transition: color 0.3s ease;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--primary-blue);
+}
+
+.header-actions {
     display: flex;
     align-items: center;
-    font-size: 0.95rem;
-    /* تصغير حجم خط الروابط قليلاً */
+    gap: 15px;
 }
 
-nav .nav-links li a i {
-    margin-right: 8px;
-    font-size: 0.9rem;
-    /* تصغير حجم أيقونات الروابط قليلاً */
-}
-
-nav .nav-links li a:hover,
-nav .nav-links li a.active {
-    color: var(--accent-yellow);
-}
-
-.contact-button .btn-primary {
-    padding: 8px 18px;
-    /* تقليل حجم زر الاتصال في الهيدر */
-    font-size: 0.9rem;
-    background: var(--accent-yellow);
-    color: var(--dark-text);
-    border-radius: 20px;
-    /* تعديل border-radius للزر */
-}
-
-.contact-button .btn-primary:hover {
-    background: #e6b000;
-}
-
-.contact-button .btn-primary i {
-    margin-right: 6px;
-}
-
-/* Mobile Menu Toggle */
 .menu-toggle {
-    color: var(--light-text);
-    font-size: 1.8rem;
-    cursor: pointer;
     display: none;
+    font-size: 1.6rem;
+    color: var(--primary-blue);
+    cursor: pointer;
 }
 
-/* Hero Section */
+/* 4. Sections Styling */
 .hero-section {
     background: url('images/hero.png') no-repeat center center/cover;
     height: 100vh;
-    min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 0 20px;
+    color: white;
     text-align: center;
-    overflow: hidden;
-    margin-top: -100px;
 }
 
 .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.75);
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 900px;
-    color: var(--light-text);
-    margin: 0 auto;
-    padding: 20px;
-    opacity: 0;
-    /* إخفاء المحتوى مبدئياً */
-    transform: translateY(50px);
-    /* بدء من الأسفل قليلاً */
-    animation: fadeInUp 1s ease-out forwards;
-    /* تطبيق الأنيميشن */
-    animation-delay: 0.5s;
-}
+.hero-content { position: relative; z-index: 2; padding: 20px; max-width: 800px; }
+.hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; font-weight: 800; }
+.hero-content h1 .highlight { color: var(--accent-yellow); }
+.hero-content p { font-size: 1.3rem; margin-bottom: 30px; }
 
-.hero-content .company-slogan {
-    font-size: 1.5rem;
-    color: var(--secondary-green);
-    margin-bottom: 15px;
-    font-weight: 700;
-    animation: fadeInUp 0.8s ease-out forwards;
-    animation-delay: 0.7s;
+section { padding: 80px 0; }
+.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; font-weight: 800; position: relative; }
+.section-title::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 70px; height: 4px; background: var(--accent-yellow); }
+
+/* Animations */
+.animate-on-scroll {
     opacity: 0;
     transform: translateY(30px);
-    padding-top: 80px;
+    transition: 0.8s ease-out;
 }
-
-.hero-content h1 {
-    font-size: 4.5rem;
-    margin-bottom: 25px;
-    line-height: 1.2;
-    font-weight: 800;
-    animation: fadeInUp 0.9s ease-out forwards;
-    animation-delay: 0.9s;
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.hero-content h1 .highlight {
-    color: var(--accent-yellow);
-}
-
-.hero-content p {
-    font-size: 1.4rem;
-    margin-bottom: 40px;
-    animation: fadeInUp 1s ease-out forwards;
-    animation-delay: 1.1s;
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    animation: fadeInUp 1.1s ease-out forwards;
-    animation-delay: 1.3s;
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.hero-buttons .btn-primary {
-    background: var(--secondary-green);
-    color: var(--light-text);
-}
-
-.hero-buttons .btn-primary:hover {
-    background: #409243;
-}
-
-.hero-buttons .btn-secondary {
-    border-color: var(--secondary-green);
-    color: var(--secondary-green);
-}
-
-.hero-buttons .btn-secondary:hover {
-    background: var(--secondary-green);
-    color: var(--light-text);
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* About Us Section */
@@ -346,6 +222,7 @@ nav .nav-links li a.active {
     margin-top: 20px; /* مسافة أعلى الزر */
     background-color: var(--primary-blue); /* جعل زر التواصل أزرق */
     color: var(--light-text);
+    
 }
 .about-text .btn-primary:hover {
     background-color: #1976d2; /* لون أزرق أغمق عند التحويم */
@@ -902,260 +779,152 @@ footer {
 }
 
 
-/* Responsive Design */
+/* --- أنيميشن النبض المخصص للسلوجان --- */
+@keyframes pulse-soft {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+}
+
+.company-slogan-wrapper {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.company-slogan {
+    background: rgba(76, 175, 80, 0.2); /* لون أخضر شفاف */
+    color: #4caf50; /* لون أخضر واضح */
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: 1px solid rgba(76, 175, 80, 0.5);
+    display: inline-block;
+    /* تشغيل أنيميشن النبض باستمرار */
+    animation: pulse-soft 2s infinite ease-in-out;
+    backdrop-filter: blur(5px);
+}
+
+/* تحسين شكل النصوص في الهيرو */
+.hero-content h1 {
+    line-height: 1.4;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.hero-desc {
+    margin-top: 15px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2rem;
+    color: #eee;
+}
+
+/* أنيميشن خفيف للخلفية (إختياري لجعلها حية) */
+@keyframes backgroundMove {
+    0% { background-position: center; }
+    50% { background-position: 52% 52%; }
+    100% { background-position: center; }
+}
+
+.hero-section {
+    animation: backgroundMove 10s infinite alternate ease-in-out;
+}
+
+/* جعل الأزرار تتحرك عند الوقوف عليها بشكل أجمل */
+.hero-buttons .btn-primary, .hero-buttons .btn-secondary {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hero-buttons .btn-primary:hover ,.btn-secondary:hover {
+    transform: scale(1.1) translateY(-5px);
+}
+.hero-buttons .btn-secondary:hover {
+    background-color: var(--secondary-green);
+}
+/* ------------------------------------------------------------------ */
+/* 7. MOBILE RESPONSIVE (هنا حل مشكلة تداخل العناصر والشاشة البيضاء) */
+/* ------------------------------------------------------------------ */
 @media (max-width: 992px) {
-    .top-bar-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .top-bar .phone-numbers {
-        margin-bottom: 10px;
-    }
-
-    .top-bar .social-media {
-        margin-top: 10px;
-        margin-right: 0;
-    }
-
-    .top-bar .social-media a {
-        margin: 0 10px;
-    }
-
-    /* Header adjustments for smaller screens */
     header {
-        margin: 10px; /* جعل الهيدر يبدو عائماً */
-        border-radius: 15px;
-        width: calc(100% - 20px);
         top: 10px;
-    }
-
-    nav {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .logo {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 15px;
-    }
-
-    .logo a {
-        justify-content: center;
-    }
-
-     header {
-        position: fixed;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
         width: 95%;
-        background: rgba(255, 255, 255, 0.98);
-        border-radius: 15px;
-        padding: 8px 15px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        z-index: 2000;
-        margin: 0; /* إلغاء المارجن القديم */
+        margin: 0 auto;
+        left: 2.5%; /* لتوسيط الهيدر تماماً */
+        border-radius: 12px;
+        padding: 10px 15px;
     }
 
-    nav.container {
-        display: flex;
-        justify-content: space-between; /* توزيع العناصر على الأطراف */
-        align-items: center;
-        padding: 0 !important;
-        width: 100%;
-    }
+    .hero-buttons {
+    display: flex;
+    flex-direction: column; /* ترتيب رأسي */
+    gap: 20px !important;    /* زيادة المسافة بين الزرين (تقدر تخليها 25 لو عايز مسافة أكبر) */
+    align-items: center;
+    margin-top: 30px;        /* مسافة بين الكلام والأزرار */
+}
 
-    /* اللوجو واسم الشركة */
-    .logo {
-        width: auto !important; /* السماح له بأخذ مساحته فقط */
-        margin-bottom: 0 !important;
-    }
+.hero-buttons a {
+    width: 90% !important;   /* عرض الأزرار على الموبايل */
+    text-align: center;
+    padding: 15px !important; /* تكبير حجم الزرار لسهولة الضغط */
+}
+    .logo-img { height: 35px; }
+    .company-brand-name { font-size: 1.1rem; }
 
-    .logo a {
-        justify-content: flex-start !important;
-    }
-
-    .logo-img {
-        height: 35px !important; /* تصغير اللوجو قليلاً */
-        margin-left: 5px !important;
-    }
-
-    .company-brand-name {
-        font-size: 1.1rem !important; /* تصغير الخط ليناسب السطر الواحد */
-        white-space: nowrap; /* منع انقسام الاسم لسطرين */
-    }
-
-    /* منطقة الأزرار (اتصل الآن + المنيو) */
-    .header-actions {
-        display: flex;
-        align-items: center;
-        gap: 10px; /* مسافة بين زر الاتصال وأيقونة المنيو */
-    }
-
-    .contact-button {
-        width: auto !important;
-        margin-bottom: 0 !important;
-        order: 1;
-    }
+    .menu-toggle { display: block; z-index: 6001; }
 
     .contact-button .btn-primary {
-        padding: 6px 12px !important;
-        font-size: 0.85rem !important;
-        white-space: nowrap;
+        padding: 7px 15px;
+        font-size: 0.85rem;
     }
 
-    /* زر القائمة (الهامبرغر) */
-    .menu-toggle {
-        display: block !important;
-        position: static !important; /* إلغاء التموضع المطلق */
-        color: var(--primary-blue);
-        font-size: 1.4rem;
-        cursor: pointer;
-        order: 2; /* تأتي بعد زر الاتصال */
-    }
-
-    /* القائمة الجانبية */
+    /* القائمة الجانبية: تم إصلاحها لتكون خارج تدفق الهيدر تماماً */
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%; /* مخفية */
-        width: 75%;
+        right: -100%; /* مخفية تماماً خارج الشاشة */
+        width: 100%;
         height: 100vh;
         background: white;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        z-index: 1999;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        gap: 30px;
+        transition: 0.4s ease-in-out;
+        z-index: 5500; /* تحت زر المنيو وفوق المحتوى */
+        padding: 20px;
     }
 
+    /* الحالة النشطة */
     .nav-links.active {
         right: 0;
     }
 
-    /* تحسين الهيرو سكشن عشان الهيدر ميتغطيش */
-    .hero-section {
-        padding-top: 100px !important;
-    }
-    /* --- نظام الأنيميشن الجديد (أكثر سلاسة) --- */
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* حركة ناعمة */
-}
-
-.animate-on-scroll.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* تأخير زمني للعناصر المتتالية (Staggered Animation) */
-.delay-1 { transition-delay: 0.2s; }
-.delay-2 { transition-delay: 0.4s; }
-.delay-3 { transition-delay: 0.6s; }
-
-/* تأثير خاص للبطاقات عند التحويم */
-.service-item, .testimonial-item {
-    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.8s ease, translateY 0.8s ease;
-}
-
-/* ضبط الهيرو سكشن للموبايل */
-.hero-section {
-    padding-top: 120px; /* لتفادي تداخل الهيدر مع المحتوى */
-    height: auto;
-    min-height: 100vh;
-}
-
-@media (max-width: 576px) {
-    .hero-content h1 {
-        font-size: 2rem; /* تصغير العنوان ليتناسب مع شاشة الجوال */
-    }
-    .hero-content p {
-        font-size: 1rem;
-    }
-}
-
-    .hero-content h1 {
-        font-size: 3rem;
-    }
-
-    .hero-content p {
-        font-size: 1.1rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero-buttons a {
-        width: 90%;
+    .nav-links li {
+        width: 100%;
         text-align: center;
     }
 
-    .section-title {
-        font-size: 2.5rem;
+    .nav-links li a {
+        font-size: 1.5rem;
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid #f0f0f0;
     }
 
-    .services-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* تعديل الهيرو سكشن للموبايل */
+    .hero-section {
+        padding-top: 100px;
+        height: auto;
+        min-height: 100vh;
     }
-
-    .service-item {
-        padding: 25px;
-    }
-
-    .service-item h3 {
-        font-size: 1.6rem;
-    }
-
-    .area-item {
-        font-size: 1.1rem;
-        padding: 10px 20px;
-    }
+    .hero-content h1 { font-size: 2.2rem; }
+    .hero-content p { font-size: 1.1rem; }
 }
 
 @media (max-width: 576px) {
-    .logo-img {
-        height: 45px;
-    }
-
-    .company-brand-name {
-        font-size: 1.6rem;
-    }
-
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-content .company-slogan {
-        font-size: 1.2rem;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-        padding: 10px 15px;
-        font-size: 1rem;
-    }
-
-    .whatsapp-float .whatsapp-btn {
-        width: 55px;
-        height: 55px;
-        font-size: 30px;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .service-item i {
-        font-size: 3rem;
-    }
-
-    .service-item h3 {
-        font-size: 1.4rem;
-    }
+    .section-title { font-size: 2rem; }
+    .hero-content h1 { font-size: 1.8rem; }
+    .company-brand-name { font-size: 1rem; }
 }
